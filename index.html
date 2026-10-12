@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshay Pratap Singh</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Color Variables */
+        :root {
+            --ink-black: #01161E;
+            --dark-teal: #124559;
+            --air-force-blue: #598392;
+            --ash-grey: #AEC3B0;
+            --beige: #EFF6E0;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--beige);
+            line-height: 1.6;
+            background-color: var(--ink-black);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--dark-teal);
+            border-bottom: 1px solid rgba(174, 195, 176, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--beige);
+            text-decoration: none;
+        }
+
+        .logo:hover {
+            color: var(--ash-grey);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--ash-grey);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--beige);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--dark-teal) 0%, var(--ink-black) 100%);
+            padding-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--beige);
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: var(--air-force-blue);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--ash-grey);
+            margin-bottom: 30px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: var(--air-force-blue);
+            color: var(--beige);
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--dark-teal);
+        }
+
+        /* Sections General */
+        section {
+            padding: 100px 0 80px;
+        }
+
+        section h2 {
+            font-size: 2.25rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--beige);
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--ink-black);
+        }
+
+        .about-text {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--ash-grey);
+            margin-bottom: 25px;
+        }
+
+        .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skills span {
+            background: rgba(89, 131, 146, 0.2);
+            color: var(--beige);
+            border: 1px solid var(--air-force-blue);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Journey Section */
+        .journey {
+            background-color: var(--dark-teal);
+        }
+
+        .journey-timeline {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .journey-card {
+            background: var(--ink-black);
+            border: 1px solid rgba(174, 195, 176, 0.2);
+            padding: 20px 25px;
+            border-radius: 8px;
+        }
+
+        .journey-card h3 {
+            color: var(--beige);
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+        }
+
+        .journey-card span {
+            display: inline-block;
+            color: var(--air-force-blue);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .journey-card p {
+            color: var(--ash-grey);
+            font-size: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--ink-black);
+            text-align: center;
+        }
+
+        .contact p {
+            font-size: 1.1rem;
+            color: var(--ash-grey);
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-card {
+            background: var(--dark-teal);
+            border: 1px solid rgba(174, 195, 176, 0.2);
+            padding: 20px 30px;
+            border-radius: 8px;
+            min-width: 250px;
+        }
+
+        .contact-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--beige);
+        }
+
+        .contact-card p, .contact-card a {
+            color: var(--beige);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-card a:hover {
+            color: var(--ash-grey);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-teal);
+            color: var(--ash-grey);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(174, 195, 176, 0.1);
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">Akshay</a>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#journey">Journey</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Hi, I'm <span class="highlight">Akshay Pratap Singh</span></h1>
+            <p>A passionate web developer building clean and user-friendly digital experiences.</p>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I am a dedicated developer with a strong foundation in modern web technologies. I enjoy turning complex problems into simple, beautiful, and intuitive designs. When I'm not coding, you can find me exploring new technologies or improving my design skills.</p>
+                    <div class="skills">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Responsive Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section id="journey" class="journey">
+        <div class="container">
+            <h2>My Journey</h2>
+            <div class="journey-timeline">
+                <div class="journey-card">
+                    <h3>Web Development Fundamentals</h3>
+                    <span>Building the Foundation</span>
+                    <p>Started exploring core web concepts, diving deep into HTML, CSS layout structures, and modern semantic elements to build structured web apps.</p>
+                </div>
+                <div class="journey-card">
+                    <h3>Interactive & Responsive Experiences</h3>
+                    <span>Expanding Skills</span>
+                    <p>Focused on writing responsive user interfaces, mastering component layouts, and implementing smooth interactions across different device viewports.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>Have a question or want to work together? Feel free to reach out through any of the channels below!</p>
+            
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3>Email</h3>
+                    <p><a href="mailto:emailakshay06@gmail.com">emailakshay06@gmail.com</a></p>
+                </div>
+                <div class="contact-card">
+                    <h3>Phone</h3>
+                    <p><a href="tel:7905707077">+91 7905707077</a></p>
+                </div>
+                <div class="contact-card">
+                    <h3>GitHub</h3>
+                    <p><a href="https://github.com/akshay6206" target="_blank">github profile</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Akshay Pratap Singh. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
